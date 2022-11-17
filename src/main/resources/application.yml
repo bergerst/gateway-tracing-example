@@ -1,0 +1,12 @@
+server:
+  port: 9999
+
+logbook:
+  filter.enabled: true
+  format.style: http
+
+# Without DECORATE_ON_EACH, the traceIds and spanIds are missing on all Logbook logs
+# With this enabled, only half of the logs are missing traceIds and spanIds 
+spring.sleuth.reactor.instrumentation-type: DECORATE_ON_EACH
+
+logging.level.org.zalando.logbook: TRACE
